@@ -1,50 +1,53 @@
-<include a CircleCI status badge, here>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+
+# Operationalize a Machine Learning Microservice API
 
 ## Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+The Operationalize a Machine Learning Microservice API contains a Machine Learning Microservice that predicts house prices in Boston according to based on different features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios.
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+## Tasks 
+- Task 1: Complete the Dockerfile
+- Task 2: Run a Container & Make a Prediction
+- Task 3: Improve Logging & Save Output
+- Task 4: Upload the Docker Image
+- Task 5: Configure Kubernetes to Run Locally
+- Task 6: Deploy with Kubernetes and Save Output Logs
+- Task 7: CircleCI Integration
 
-### Project Tasks
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+## Requirements
+ - Python 3.7
+ - Docker
+ - Kubernetes
+ - Hadolint
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
-
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
-
----
-
-## Setup the Environment
-
-* Create a virtualenv with Python 3.7 and activate it. Refer to this link for help on specifying the Python version in the virtualenv. 
-```bash
-python3 -m pip install --user virtualenv
-# You should have Python 3.7 available in your host. 
-# Check the Python path using `which python3`
-# Use a command similar to this one:
-python3 -m virtualenv --python=<path-to-Python3.7> .devops
-source .devops/bin/activate
+## Step 1: Clone repo 
 ```
-* Run `make install` to install the necessary dependencies
+git clone git@github.com:udacity/DevOps_Microservices.git
 
-### Running `app.py`
+```
+## Step 2: Install dependencies
+- Set up the virtual environment by running ```make setup```.  
+- Install dependencies by running ```make install```
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+## Step 3: Run Docker container  
+- Run the application on docker by calling `./run_docker.sh`
 
-### Kubernetes Steps
+## Step 4: Upload the docker image to Docker Hub
+- Run `./upload_docker.sh` to upload the docker image to docker hub.
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+## Step 5: Kubernetes deployment
+- Run `./run_kubernetes.sh` to deploy the ML model to a kubernetes cluster.
+
+## Contacts    
+If you have any question or feedback about the project, you can reach out to me via Email: mwangi.martin24@gmail.com or send me a message on
+[LinkedIn](https://www.linkedin.com/in/martin-mwangi-46523483/)
+
+## Resources and important links  
+- [Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [Docker](https://www.docker.com/get-started/)
+
+## License  
+
+This project is licensed under the MIT Open Source license Copyright (c) 2022.
